@@ -111,7 +111,6 @@ class CpuStrums extends Option
 		display = updateDisplay();
 		return true;
 	}
-}
 
 	private override function updateDisplay():String
 	{
