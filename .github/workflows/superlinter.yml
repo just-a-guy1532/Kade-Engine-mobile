@@ -1,4 +1,4 @@
-/*jobs:
+-- jobs:
   build:
     runs-on: [ubuntu-latest, macos-latest]
     steps:
@@ -6,5 +6,5 @@
         with:
           haxe-version: 4.0.5
       - run: |
-          haxe -version*/
+          haxe -version
           haxelib install hxnodejs
