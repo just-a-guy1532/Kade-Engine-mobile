@@ -13,7 +13,7 @@ import flixel.addons.ui.FlxUIState;
 import flixel.math.FlxRect;
 import flixel.util.FlxTimer;
 #if mobileC
-import mobile.FlxVirtualPad;
+import ui.FlxVirtualPad;
 import flixel.input.actions.FlxActionInput;
 #end
 
