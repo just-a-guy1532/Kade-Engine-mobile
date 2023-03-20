@@ -76,8 +76,12 @@ class Main extends Sprite
 		#if !debug
 		initialState = TitleState;
 		#end
+
+                #if mobile
+		framerate = 60;
+		#end
 		
-         #if mobile
+                #if mobile
 		gameWidth = 1280;
 		gameHeight = 720;
 		zoom = 1;
