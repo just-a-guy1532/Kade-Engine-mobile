@@ -37,10 +37,6 @@ class TitleState extends MusicBeatState
 {
 	static var initialized:Bool = false;
 
-        #if android
-	FlxG.android.preventDefaultKeys = [BACK];
-	#end
-
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
@@ -53,6 +49,10 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+                #if android
+	        FlxG.android.preventDefaultKeys = [BACK];
+	        #end
+
 		/*#if polymod
 		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
 		#end
