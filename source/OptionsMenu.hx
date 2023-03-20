@@ -25,9 +25,6 @@ class OptionsMenu extends MusicBeatState
 
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
-		     #if mobileC
-			new CustomControls("Edit a mobile controls..."),
-			#end
 			new DFJKOption(controls),
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
@@ -62,6 +59,11 @@ class OptionsMenu extends MusicBeatState
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
 			new BotPlay("Showcase your charts and mods with autoplay.")
+		]),
+
+                new OptionCategory("Mobile settings", [
+			new CustomControls("edit a control"),
+			new About("about android port")
 		])
 		
 	];
