@@ -111,6 +111,7 @@ class CpuStrums extends Option
 		display = updateDisplay();
 		return true;
 	}
+}
 class CustomControls extends Option
 {
 	public function new(desc:String)
