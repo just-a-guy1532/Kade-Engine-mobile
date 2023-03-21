@@ -54,6 +54,7 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.ShaderFilter;
 import ui.Mobilecontrols;
+import ui.FlxVirtualPad;
 
 #if windows
 import Discord.DiscordClient;
@@ -211,8 +212,9 @@ class PlayState extends MusicBeatState
 
 	private var executeModchart = false;
 	
-    #if mobileC
+        #if mobileC
 	var mcontrols:Mobilecontrols; 
+        var _pad:FlxVirtualPad;
 	#end
 	
 	// API stuff
@@ -990,7 +992,7 @@ class PlayState extends MusicBeatState
 			switch (mcontrols.mode)
 			{
 				case VIRTUALPAD_RIGHT | VIRTUALPAD_LEFT | VIRTUALPAD_CUSTOM:
-					controls.setVirtualPad(mcontrols._virtualPad, FULL, NONE);
+					controls.setVirtualPad(mcontrols._virtualPad, FULL, A); //cuz it's for animation debug
 				case HITBOX:
 					controls.setHitBox(mcontrols._hitbox);
 				default:
@@ -1880,7 +1882,7 @@ class PlayState extends MusicBeatState
 			FlxG.switchState(new Charting()); */
 
 		#if debug
-		if (FlxG.keys.justPressed.EIGHT)
+		if (FlxG.keys.justPressed.EIGHT #if mobileC || _pad.buttonA.pressed #end)
 		{
 			FlxG.switchState(new AnimationDebug(SONG.player2));
 			#if windows
