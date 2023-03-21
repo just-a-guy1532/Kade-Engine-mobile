@@ -2438,8 +2438,8 @@ class PlayState extends MusicBeatState
 		#end
 		
 		/*if (!loadRep)
-			rep.SaveReplay(saveNotes);*/ //this shit make the game crash at the end of a song
-		else
+			rep.SaveReplay(saveNotes); //this shit make the game crash at the end of a song
+		else*/
 		{
 			FlxG.save.data.botplay = false;
 			FlxG.save.data.scrollSpeed = 1;
