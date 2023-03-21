@@ -164,7 +164,7 @@ class AnimationDebug extends FlxState
 		if (curAnim >= animList.length)
 			curAnim = 0;
 
-		if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.W || FlxG.keys.justPressed.SPACE #if mobileC || _pad.buttonUp.pressed #end || #if mobileC || _pad.buttonDown.pressed #end || #if mobileC || _pad.buttonC.pressed #end)
+		if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.W || FlxG.keys.justPressed.SPACE #if mobileC || _pad.buttonUp.pressed || _pad.buttonDown.pressed || _pad.buttonC.pressed #end)
 		{
 			char.playAnim(animList[curAnim]);
 
