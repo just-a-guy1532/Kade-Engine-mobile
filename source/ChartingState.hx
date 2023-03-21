@@ -1021,7 +1021,7 @@ class ChartingState extends MusicBeatState
 				vocals.time = FlxG.sound.music.time;
 			}
 
-			if (!FlxG.keys.pressed.SHIFT #if mobileC || key_shift.pressed #end))
+			if (!FlxG.keys.pressed.SHIFT #if mobileC || key_shift.pressed #end)
 			{
 				if (FlxG.keys.pressed.W || FlxG.keys.pressed.S #if mobileC || _pad.buttonDown.pressed || _pad.buttonUp.pressed #end)
 				{
