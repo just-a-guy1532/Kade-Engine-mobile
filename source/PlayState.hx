@@ -1169,7 +1169,7 @@ class PlayState extends MusicBeatState
 	function startCountdown():Void
 	{
 	
-	    #if mobileC
+	        #if mobileC
 		mcontrols.visible = true;
 		#end
 		
@@ -2433,12 +2433,12 @@ class PlayState extends MusicBeatState
 	function endSong():Void
 	{
 	
-	     #if mobileC
+	        #if mobileC
 		mcontrols.visible = false;
 		#end
 		
-		if (!loadRep)
-			rep.SaveReplay(saveNotes);
+		/*if (!loadRep)
+			rep.SaveReplay(saveNotes);*/ //this shit make the game crash at the end of a song
 		else
 		{
 			FlxG.save.data.botplay = false;
