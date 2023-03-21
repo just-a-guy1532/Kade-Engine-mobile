@@ -497,6 +497,23 @@ class RainbowFPSOption extends Option
 	}
 }
 
+class FreeplayMusic extends Option
+{
+	public function new(desc:String) {
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool {
+		FlxG.save.data.freeplayMusic = !FlxG.save.data.freeplayMusic;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+		return FlxG.save.data.freeplayMusic ? "Freeplay Music" : "No Freeplay Music";
+} //author of this code: TheLeerName
+
 class NPSDisplayOption extends Option
 {
 	public function new(desc:String)
