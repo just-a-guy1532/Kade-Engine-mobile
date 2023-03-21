@@ -61,6 +61,10 @@ class OptionsMenu extends MusicBeatState
 			new BotPlay("Showcase your charts and mods with autoplay.")
 		]),
 
+                new OptionCategory("Optimization", [
+			new FreeplayMusic("Toggle play instrumental of songs in freeplay."),
+		]),
+
                 new OptionCategory("Mobile settings", [
 			new CustomControls("edit a control"),
 			new About("about android port")
