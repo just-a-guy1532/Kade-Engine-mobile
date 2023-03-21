@@ -148,12 +148,12 @@ class AnimationDebug extends FlxState
 			camFollow.velocity.set();
 		}
 
-		if (FlxG.keys.justPressed.W)
+		if (FlxG.keys.justPressed.W #if mobileC || _pad.buttonDown.pressed #end)
 		{
 			curAnim -= 1;
 		}
 
-		if (FlxG.keys.justPressed.S)
+		if (FlxG.keys.justPressed.S #if mobileC || _pad.buttonUp.pressed #end)
 		{
 			curAnim += 1;
 		}
@@ -164,7 +164,7 @@ class AnimationDebug extends FlxState
 		if (curAnim >= animList.length)
 			curAnim = 0;
 
-		if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.W || FlxG.keys.justPressed.SPACE)
+		if (FlxG.keys.justPressed.S || FlxG.keys.justPressed.W || FlxG.keys.justPressed.SPACE #if mobileC || _pad.buttonUp.pressed #end || #if mobileC || _pad.buttonDown.pressed #end || #if mobileC || _pad.buttonC.pressed #end)
 		{
 			char.playAnim(animList[curAnim]);
 
