@@ -79,6 +79,10 @@ class AnimationDebug extends FlxState
 
 		FlxG.camera.follow(camFollow);
 
+                #if mobileC
+                addVirtualPad(FULL, A_B_C);
+                #end
+
 		super.create();
 	}
 
@@ -163,10 +167,10 @@ class AnimationDebug extends FlxState
 			genBoyOffsets(false);
 		}
 
-		var upP = FlxG.keys.anyJustPressed([UP]);
-		var rightP = FlxG.keys.anyJustPressed([RIGHT]);
-		var downP = FlxG.keys.anyJustPressed([DOWN]);
-		var leftP = FlxG.keys.anyJustPressed([LEFT]);
+		var upP = controls.UI_UP_P;
+		var rightP = controls.UI_RIGHT_P;
+		var downP = controls.UI_DOWN_P;
+		var leftP = controls.UI_LEFT_P;
 
 		var holdShift = FlxG.keys.pressed.SHIFT;
 		var multiplier = 1;
