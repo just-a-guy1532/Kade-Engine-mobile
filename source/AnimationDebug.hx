@@ -8,6 +8,7 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.FlxCamera;
 
 /**
 	*DEBUG MODE
@@ -80,8 +81,12 @@ class AnimationDebug extends FlxState
 		FlxG.camera.follow(camFollow);
 
                 #if mobileC
-                addVirtualPad(FULL, A_B_C);
-                #end
+		addVirtualPad(FULL, A_B_C);
+		var camcontrol = new FlxCamera();
+		FlxG.cameras.add(camcontrol);
+		camcontrol.bgColor.alpha = 0;
+		_virtualpad.cameras = [camcontrol];	
+		#end
 
 		super.create();
 	}
