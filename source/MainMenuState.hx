@@ -211,6 +211,11 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 		}
+                #if debug
+		if (FlxG.keys.justPressed.EIGHT #if mobileC || _pad.buttonA.pressed #end)
+		{
+			FlxG.switchState(new AnimationDebug(SONG.player2));
+		}
 
 		super.update(elapsed);
 
