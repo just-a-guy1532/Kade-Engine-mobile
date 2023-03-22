@@ -224,7 +224,7 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.keys.justPressed.EIGHT  #if mobileC || key_space.justPressed #end)
 		{  
                         selectedSomethin = true;    
-			FlxG.switchState(new AnimationDebug(SONG.player2));
+			FlxG.switchState(new AnimationDebug();
 		}
                 #end
 
