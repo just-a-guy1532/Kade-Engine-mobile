@@ -139,7 +139,9 @@ class MainMenuState extends MusicBeatState
                 key_space.loadGraphic(Paths.image("key_space")); //"assets/shared/images/key_space.png"
                 key_space.alpha = 0.75;
                 add(key_space);
-                #else
+                #end
+
+                #if mobileC
 		addVirtualPad(UP_DOWN, A_B);
 		#end
 		
