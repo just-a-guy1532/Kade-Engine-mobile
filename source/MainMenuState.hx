@@ -43,6 +43,9 @@ class MainMenuState extends MusicBeatState
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
+        #if mobileC
+	var key_space:FlxButton;
+        #end
 	public static var finishedFunnyMove:Bool = false;
 
 	override function create()
@@ -128,8 +131,14 @@ class MainMenuState extends MusicBeatState
 			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
 
 		changeItem();
-		
-        #if mobileC
+
+                #if mobileC
+		// add buttons
+		key_space = new FlxButton(60, 60, "");
+                key_space.loadGraphic(Paths.image("key_space")); //"assets/shared/images/key_space.png"
+                key_space.alpha = 0.75;
+                add(key_space);
+                #else
 		addVirtualPad(UP_DOWN, A_B);
 		#end
 		
@@ -212,7 +221,7 @@ class MainMenuState extends MusicBeatState
 			}
 		}
                 #if debug
-		if (FlxG.keys.justPressed.EIGHT #if mobileC || _pad.buttonA.pressed #end)
+		if (FlxG.keys.justPressed.EIGHT  #if mobileC || key_space.justPressed #end)
 		{  
                         selectedSomethin = true;    
 			FlxG.switchState(new AnimationDebug(SONG.player2));
