@@ -13,7 +13,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import flixel.FlxButton; //bruh moment
+import flixel.ui.FlxButton; //bruh moment
 
 #if windows
 import Discord.DiscordClient;
