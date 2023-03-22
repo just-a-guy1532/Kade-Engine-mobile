@@ -9,7 +9,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
-import ui.FlxVirtualPad;
+//import ui.FlxVirtualPad; bruh
 
 /**
 	*DEBUG MODE
@@ -26,9 +26,9 @@ class AnimationDebug extends FlxState
 	var isDad:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
-        #if mobileC
+       /*#if mobileC
         var _pad:FlxVirtualPad;
-        #end
+        #end*/
 
 	public function new(daAnim:String = 'spooky')
 	{
