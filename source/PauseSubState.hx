@@ -88,8 +88,8 @@ class PauseSubState extends MusicBeatSubstate
 
 		changeSelection();
 		
-        #if mobileC
-		addVirtualPad(FULL, A);  //full cuz idk
+                #if mobileC
+		addVirtualPad(FULL, A);  //dont press the right and left button,the game will crash
 		#end
 		
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -185,7 +185,7 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
-                                case "Go to charting":
+                                /*case "Go to charting":
                                         if(PlayState.loadRep)
 					{
 						FlxG.save.data.botplay = false;
@@ -200,7 +200,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.luaModchart = null;
 					}
 					#end
-					FlxG.switchState(new ChartingState());
+					FlxG.switchState(new ChartingState());*/
 				case "Exit to menu":
 					if(PlayState.loadRep)
 					{
