@@ -89,7 +89,7 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 		
                 #if mobileC
-		addVirtualPad(FULL, A);  //dont press the right and left button,the game will crash
+		addVirtualPad(UP_DOWN, A);
 		#end
 		
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
