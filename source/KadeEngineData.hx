@@ -66,6 +66,9 @@ class KadeEngineData
 		if (FlxG.save.data.flashing == null)
 			FlxG.save.data.flashing = true;
 
+                if (FlxG.save.data.freeplayMusic == null)
+			FlxG.save.data.freeplayMusic = false;
+
 		if (FlxG.save.data.resetButton == null)
 			FlxG.save.data.resetButton = false;
 		
