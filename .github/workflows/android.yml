@@ -43,7 +43,7 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null --quiet
-          haxelib install hmm --quiet
+          haxelib install android --quiet
           haxelib run android install
 
       - name: Configure Android
