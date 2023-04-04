@@ -21,7 +21,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu', 'Charting menu];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -185,22 +185,17 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
-                                /*case "Go to charting":
-                                        if(PlayState.loadRep)
-					{
-						FlxG.save.data.botplay = false;
-						FlxG.save.data.scrollSpeed = 1;
-						FlxG.save.data.downscroll = false;
-					}
-					PlayState.loadRep = false;
-                                        #if windows
+                                case "Charting menu":
+					FlxG.switchState(new ChartingState());
+					//FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
+					#if windows
+					DiscordClient.changePresence("Chart Editor", null, null, true);
 					if (PlayState.luaModchart != null)
 					{
 						PlayState.luaModchart.die();
 						PlayState.luaModchart = null;
 					}
 					#end
-					FlxG.switchState(new ChartingState());*/
 				case "Exit to menu":
 					if(PlayState.loadRep)
 					{
