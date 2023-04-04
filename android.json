@@ -30,6 +30,12 @@
 			"ref":"main",
 			"url":"https://github.com/polybiusproxy/hxCodec.git"
 		},
+                {
+			"name":"polymod",
+			"type":"git",
+			"ref":"master",
+			"url":"https://github.com/larsiusprime/polymod"
+		},
 		{
 			"name":"hscript",
 			"type":"haxelib"
