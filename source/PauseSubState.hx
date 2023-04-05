@@ -21,7 +21,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu', 'Charting menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Charting', 'Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -185,14 +185,7 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
-                                case "Charting menu":
-					if(PlayState.loadRep)
-					{
-						FlxG.save.data.botplay = false;
-						FlxG.save.data.scrollSpeed = 1;
-						FlxG.save.data.downscroll = false;
-					}
-					PlayState.loadRep = false;
+                                case "Charting":
 					#if windows
 					if (PlayState.luaModchart != null)
 					{
@@ -200,9 +193,6 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.luaModchart = null;
 					}
 					#end
-					if (FlxG.save.data.fpsCap > 290)
-						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
-					
 					FlxG.switchState(new ChartingState());
 				case "Exit to menu":
 					if(PlayState.loadRep)
