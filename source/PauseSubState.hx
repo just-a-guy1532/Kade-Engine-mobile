@@ -185,7 +185,7 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
-                                case "Charting":
+                                /*case "Charting":
 					#if windows
 					if (PlayState.luaModchart != null)
 					{
@@ -193,7 +193,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.luaModchart = null;
 					}
 					#end
-					FlxG.switchState(new ChartingState());
+					FlxG.switchState(new ChartingState());*/
 				case "Exit to menu":
 					if(PlayState.loadRep)
 					{
