@@ -13,7 +13,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
-import flixel.ui.FlxButton; //bruh moment
+//import flixel.ui.FlxButton; //bruh moment
 
 #if windows
 import Discord.DiscordClient;
@@ -44,9 +44,9 @@ class MainMenuState extends MusicBeatState
 
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
-        #if mobileC
+        /*#if mobileC
 	var key_space:FlxButton;
-        #end
+        #end*/ //no need tbh
 	public static var finishedFunnyMove:Bool = false;
 
 	override function create()
@@ -133,16 +133,16 @@ class MainMenuState extends MusicBeatState
 
 		changeItem();
 
-                #if mobileC
+                /*#if mobileC
 		// add buttons
 		key_space = new FlxButton(60, 60, "");
                 key_space.loadGraphic(Paths.image("key_space")); //"assets/shared/images/key_space.png"
                 key_space.alpha = 0.75;
                 add(key_space);
-                #end
+                #end*/
 
                 #if mobileC
-		addVirtualPad(UP_DOWN, A_B);
+		addVirtualPad(UP_DOWN, A_B_C);
 		#end
 		
 		super.create();
@@ -224,7 +224,7 @@ class MainMenuState extends MusicBeatState
 			}
 		}
                 #if debug
-		if (FlxG.keys.justPressed.EIGHT  #if mobileC || key_space.justPressed #end)
+		if (FlxG.keys.justPressed.EIGHT  #if mobileC || _virtualpad.buttonC.justPressed #end)
 		{  
                         selectedSomethin = true;    
 			FlxG.switchState(new ChartingState());
