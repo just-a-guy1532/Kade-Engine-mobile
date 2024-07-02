@@ -2,6 +2,8 @@ import flixel.system.FlxAssets.FlxShader;
 
 class ChromaticAberration extends FlxShader
 {
+@:glFragmentSource('
+#pragma header
 vec4 ChromaticAberration(sampler2D tex,vec4 clr, vec2 uv){
 
     float dis = distance(uv,vec2(0.5));
@@ -22,6 +24,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ){
     
 
 }
+')
+
 public function new()
 	{
 		super();
